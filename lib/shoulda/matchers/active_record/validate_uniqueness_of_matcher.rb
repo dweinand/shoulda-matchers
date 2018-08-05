@@ -583,7 +583,7 @@ module Shoulda
 
             @secure_attribute = :password
           else
-            auth_attr = model.instance_methods.find {|meth| meth.to_s =~ /authenticate_[\w_]+/ }
+            auth_attr = model.class.instance_methods.find {|meth| meth.to_s =~ /authenticate_[\w_]+/ }
 
             return false unless auth_attr
 
